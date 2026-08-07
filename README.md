@@ -6,7 +6,7 @@ This project demonstrates the same core technique used by real-world Host-based 
 
 ---
 
-## ✨ Features
+##  Features
 
 - **Baseline creation** — scans a target folder (including subfolders) and records a SHA-256 hash for every file.
 - **Change detection** — classifies every scan result as `MODIFIED`, `NEW`, or `DELETED`.
@@ -18,7 +18,7 @@ This project demonstrates the same core technique used by real-world Host-based 
 
 ---
 
-## 🧠 How It Works
+##  How It Works
 
 1. **Baseline** — On first run, the tool walks through the monitored folder and computes a SHA-256 hash for every file, storing the results in `baseline.json`.
 2. **Scan** — On each subsequent run, it recomputes the hashes and compares them against the baseline.
@@ -32,14 +32,14 @@ Because SHA-256 has the *avalanche effect*, even a single-byte change to a file 
 
 ---
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 - **Python 3.12+**
 - Built-in libraries: `hashlib`, `os`, `json`, `time`, `logging`, `smtplib`, `colorama`
 
 ---
 
-## 📂 Project Structure
+##  Project Structure
 
 ```
 FileIntegrityMonitor/
@@ -53,7 +53,7 @@ FileIntegrityMonitor/
 
 ---
 
-## 🚀 Getting Started (Windows)
+##  Getting Started (Windows)
 
 ### 1. Clone the repository
 
@@ -95,13 +95,13 @@ Choose from the menu:
 
 ---
 
-## ⏱️ Automating with Windows Task Scheduler
+##  Automating with Windows Task Scheduler
 
 For "always-on" protection without keeping a terminal window open, register `run_fim.bat` as a recurring Windows Task Scheduler task (e.g. every 10 minutes). See the project write-up for full step-by-step instructions.
 
 ---
 
-## ⚠️ Known Limitations
+##  Known Limitations
 
 - **Baseline trust problem**: the baseline is only as trustworthy as the moment it was created — if files are already tampered with before the baseline runs, the tool will treat the compromised state as "normal."
 - **Rename blind spot**: a renamed file is reported as one deletion + one new file, since the tool tracks `(path, hash)` pairs rather than persistent file identity.
@@ -110,7 +110,7 @@ For "always-on" protection without keeping a terminal window open, register `run
 
 ---
 
-## 🔮 Possible Extensions
+##  Possible Extensions
 
 - Real-time monitoring via the `watchdog` package
 - HMAC-signed baseline to prevent silent baseline tampering
@@ -120,12 +120,12 @@ For "always-on" protection without keeping a terminal window open, register `run
 
 ---
 
-## 📄 License
+##  License
 
 This project is for educational purposes.
 
 ---
 
-## 👤 Author
+##  Author
 
 Built by Monisha M — CSE Undergraduate.
